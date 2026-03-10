@@ -40,7 +40,7 @@
             z-index: 0;
         }
 
-        /* LOGIN SCREEN */
+        /* LOGIN */
         #loginScreen {
             position: fixed;
             inset: 0;
@@ -62,24 +62,9 @@
         }
 
         .login-card .logo { font-size: 2.8rem; margin-bottom: 8px; }
-
-        .login-card h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-        }
-
+        .login-card h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
         .login-card h2 span { color: var(--accent-broadcast); }
-
-        .login-card p {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.68rem;
-            color: var(--muted);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-        }
+        .login-card p { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 32px; }
 
         .login-input {
             width: 100%;
@@ -110,34 +95,23 @@
             font-weight: 800;
             cursor: pointer;
             transition: all 0.2s;
-            letter-spacing: 0.5px;
         }
 
-        .login-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(0,245,160,0.3);
-        }
+        .login-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,245,160,0.3); }
+        .login-hint { margin-top: 20px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); line-height: 1.6; }
 
-        .login-hint {
-            margin-top: 20px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        /* MAIN APP */
+        /* APP */
         #appScreen { display: none; }
 
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 24px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
         }
 
         header {
@@ -149,351 +123,202 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .header-left h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1;
-        }
-
+        .header-left h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; line-height: 1; }
         .header-left h1 span { color: var(--accent-broadcast); }
+        .header-left p { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--muted); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; }
+        .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 
-        .header-left p {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--muted);
-            margin-top: 8px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .user-badge { display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--accent-broadcast); border: 1px solid rgba(0,245,160,0.3); padding: 8px 14px; border-radius: 100px; }
 
-        .header-right { display: flex; align-items: center; gap: 12px; }
-
-        .user-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--accent-broadcast);
-            border: 1px solid rgba(0,245,160,0.3);
-            padding: 8px 14px;
-            border-radius: 100px;
-        }
-
-        .status-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--muted);
-            border: 1px solid var(--border);
-            padding: 8px 14px;
-            border-radius: 100px;
-            transition: all 0.3s;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--muted);
-            transition: all 0.3s;
-        }
-
-        .status-badge.connected { color: var(--accent-broadcast); border-color: rgba(0,245,160,0.3); }
-
-        .status-badge.connected .status-dot {
-            background: var(--accent-broadcast);
-            box-shadow: 0 0 8px var(--accent-broadcast);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.85); }
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
-            animation: fadeUp 0.5s ease both;
-        }
-
-        .card:nth-child(2) { animation-delay: 0.1s; }
-        .card:nth-child(3) { animation-delay: 0.2s; }
-        .card:nth-child(4) { animation-delay: 0.3s; }
-
-        .card-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 20px;
-        }
-
-        .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-
-        .strategy-btn {
-            padding: 14px 8px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--muted);
-            font-family: 'Syne', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .strategy-btn .icon { font-size: 1.4rem; }
-        .strategy-btn:hover { color: var(--text); border-color: #333; }
-
-        .strategy-btn.active[data-type="broadcast"] { background: rgba(0,245,160,0.08); border-color: var(--accent-broadcast); color: var(--accent-broadcast); }
-        .strategy-btn.active[data-type="room"] { background: rgba(124,106,255,0.08); border-color: var(--accent-room); color: var(--accent-room); }
-        .strategy-btn.active[data-type="private"] { background: rgba(255,77,109,0.08); border-color: var(--accent-private); color: var(--accent-private); }
-
-        .strategy-info {
-            margin-top: 16px;
-            padding: 12px 16px;
-            border-radius: 8px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .context-fields { display: flex; flex-direction: column; gap: 12px; }
-        .field-group { display: flex; flex-direction: column; gap: 6px; }
-
-        .field-group label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .field-group input {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 14px;
-            color: var(--text);
-            font-family: 'Syne', sans-serif;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s;
-            width: 100%;
-        }
-
-        .field-group input:focus { border-color: #444; }
-        .field-group input:disabled { opacity: 0.3; cursor: not-allowed; }
-
-        .message-area { grid-column: 1 / -1; }
-
-        .message-row { display: flex; gap: 12px; }
-
-        .message-row input {
-            flex: 1;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 14px 18px;
-            color: var(--text);
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .send-btn {
-            padding: 14px 28px;
-            border-radius: 10px;
-            border: none;
-            background: var(--accent-broadcast);
-            color: #000;
-            font-family: 'Syne', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 800;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .send-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,245,160,0.3); }
-        .send-btn.room { background: var(--accent-room); }
-        .send-btn.room:hover { box-shadow: 0 4px 20px rgba(124,106,255,0.3); }
-        .send-btn.private { background: var(--accent-private); }
-        .send-btn.private:hover { box-shadow: 0 4px 20px rgba(255,77,109,0.3); }
-
-        .log-panel { grid-column: 1 / -1; min-height: 260px; }
-
-        .log-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-
-        .clear-btn {
+        .change-user-btn, .clear-btn {
             font-family: 'Space Mono', monospace;
             font-size: 0.65rem;
             letter-spacing: 1px;
             color: var(--muted);
             background: none;
             border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 4px;
+            padding: 8px 14px;
+            border-radius: 100px;
             cursor: pointer;
             transition: all 0.2s;
         }
 
-        .clear-btn:hover { color: var(--text); border-color: #444; }
+        .change-user-btn:hover, .clear-btn:hover { color: var(--text); border-color: #444; }
 
-        .log-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            max-height: 300px;
-            overflow-y: auto;
-            padding-right: 4px;
+        .status-badge { display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); border: 1px solid var(--border); padding: 8px 14px; border-radius: 100px; transition: all 0.3s; }
+        .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); transition: all 0.3s; }
+        .status-badge.connected { color: var(--accent-broadcast); border-color: rgba(0,245,160,0.3); }
+        .status-badge.connected .status-dot { background: var(--accent-broadcast); box-shadow: 0 0 8px var(--accent-broadcast); animation: pulse 2s infinite; }
+
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; animation: fadeUp 0.5s ease both; }
+        .card:nth-child(2) { animation-delay: 0.08s; }
+        .card:nth-child(3) { animation-delay: 0.16s; }
+        .card:nth-child(4) { animation-delay: 0.24s; }
+
+        .card-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+
+        /* STRATEGY */
+        .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+        .strategy-btn { padding: 12px 6px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--muted); font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .strategy-btn .icon { font-size: 1.3rem; }
+        .strategy-btn:hover { color: var(--text); border-color: #333; }
+        .strategy-btn.active[data-type="broadcast"] { background: rgba(0,245,160,0.08); border-color: var(--accent-broadcast); color: var(--accent-broadcast); }
+        .strategy-btn.active[data-type="room"] { background: rgba(124,106,255,0.08); border-color: var(--accent-room); color: var(--accent-room); }
+        .strategy-btn.active[data-type="private"] { background: rgba(255,77,109,0.08); border-color: var(--accent-private); color: var(--accent-private); }
+
+        .strategy-info { margin-top: 14px; padding: 10px 14px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--muted); line-height: 1.6; }
+
+        /* CONTEXT */
+        .context-fields { display: flex; flex-direction: column; gap: 12px; }
+        .field-group { display: flex; flex-direction: column; gap: 6px; }
+        .field-group label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+        .field-group input, .field-group select, .room-create-input {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
         }
 
+        .field-group input:focus, .field-group select:focus, .room-create-input:focus { border-color: #444; }
+        .field-group input:disabled, .field-group select:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        /* MESSAGE */
+        .message-area { grid-column: 1 / -1; }
+
+        .message-row { display: flex; gap: 12px; }
+        .message-row input { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; color: var(--text); font-family: 'Syne', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+
+        .send-btn { padding: 14px 28px; border-radius: 10px; border: none; background: var(--accent-broadcast); color: #000; font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .send-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,245,160,0.3); }
+        .send-btn.room { background: var(--accent-room); color: #fff; }
+        .send-btn.room:hover { box-shadow: 0 4px 20px rgba(124,106,255,0.3); }
+        .send-btn.private { background: var(--accent-private); color: #fff; }
+        .send-btn.private:hover { box-shadow: 0 4px 20px rgba(255,77,109,0.3); }
+
+        /* ROOMS */
+        .rooms-panel { grid-column: 1 / -1; }
+        .rooms-panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .rooms-section h3 { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+
+        .room-create-row { display: flex; gap: 8px; margin-bottom: 14px; }
+
+        .room-create-btn { padding: 10px 16px; border-radius: 8px; border: none; background: var(--accent-room); color: #fff; font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+        .room-create-btn:hover { opacity: 0.85; }
+
+        .rooms-list { display: flex; flex-direction: column; gap: 8px; max-height: 200px; overflow-y: auto; }
+        .rooms-list::-webkit-scrollbar { width: 3px; }
+        .rooms-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+        .room-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); transition: all 0.2s; animation: fadeUp 0.3s ease both; }
+        .room-item.joined { border-color: var(--accent-room); background: rgba(124,106,255,0.06); }
+        .room-item-left { display: flex; align-items: center; gap: 10px; }
+        .room-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: all 0.3s; flex-shrink: 0; }
+        .room-item.joined .room-dot { background: var(--accent-room); box-shadow: 0 0 6px var(--accent-room); }
+        .room-name { font-size: 0.88rem; font-weight: 600; }
+        .room-creator { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+
+        .room-join-btn { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 1px; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--accent-room); color: var(--accent-room); background: transparent; cursor: pointer; transition: all 0.2s; }
+        .room-join-btn:hover { background: rgba(124,106,255,0.15); }
+        .room-join-btn.leave { border-color: var(--accent-private); color: var(--accent-private); }
+        .room-join-btn.leave:hover { background: rgba(255,77,109,0.1); }
+
+        .joined-chips { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; }
+        .joined-chip { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 100px; background: rgba(124,106,255,0.1); border: 1px solid var(--accent-room); color: var(--accent-room); font-family: 'Space Mono', monospace; font-size: 0.68rem; animation: fadeUp 0.3s ease both; }
+        .chip-remove { cursor: pointer; opacity: 0.6; font-size: 0.8rem; transition: opacity 0.2s; }
+        .chip-remove:hover { opacity: 1; }
+
+        .empty-rooms { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); padding: 20px 0; text-align: center; }
+
+        /* LOG */
+        .log-panel { grid-column: 1 / -1; }
+        .log-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+
+        .log-list { list-style: none; display: flex; flex-direction: column; gap: 8px; max-height: 280px; overflow-y: auto; padding-right: 4px; }
         .log-list::-webkit-scrollbar { width: 4px; }
         .log-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-        .log-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 14px;
-            border-radius: 8px;
-            background: var(--surface);
-            border-left: 3px solid var(--border);
-            animation: slideIn 0.3s ease both;
-            font-size: 0.9rem;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-8px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
+        .log-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: 8px; background: var(--surface); border-left: 3px solid var(--border); animation: slideIn 0.3s ease both; font-size: 0.88rem; }
         .log-item.broadcast { border-left-color: var(--accent-broadcast); }
         .log-item.room { border-left-color: var(--accent-room); }
         .log-item.private { border-left-color: var(--accent-private); background: rgba(255,77,109,0.05); }
+        .log-item.history { opacity: 0.55; }
 
-        .log-tag {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.62rem;
-            padding: 2px 7px;
-            border-radius: 4px;
-            white-space: nowrap;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
+        .log-tag { font-family: 'Space Mono', monospace; font-size: 0.6rem; padding: 2px 7px; border-radius: 4px; white-space: nowrap; letter-spacing: 1px; text-transform: uppercase; flex-shrink: 0; margin-top: 2px; }
         .log-item.broadcast .log-tag { background: rgba(0,245,160,0.1); color: var(--accent-broadcast); }
         .log-item.room .log-tag { background: rgba(124,106,255,0.1); color: var(--accent-room); }
         .log-item.private .log-tag { background: rgba(255,77,109,0.1); color: var(--accent-private); }
 
         .log-content { flex: 1; line-height: 1.4; }
-        .log-meta { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 3px; }
-        .log-time { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--muted); flex-shrink: 0; margin-top: 3px; }
+        .log-meta { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--muted); margin-top: 3px; }
+        .log-time { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); flex-shrink: 0; margin-top: 3px; }
 
-        .empty-state {
-            text-align: center;
-            padding: 40px;
-            color: var(--muted);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
+        .empty-state { text-align: center; padding: 40px; color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 1px; }
+        .history-divider { text-align: center; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--border); margin-bottom: 4px; letter-spacing: 2px; }
 
-        /* Private toast */
-        .private-toast {
+        /* TOASTS */
+        .private-toast, .room-toast {
             position: fixed;
             top: 24px;
             right: 24px;
             z-index: 999;
             background: var(--card);
-            border: 1px solid var(--accent-private);
             border-radius: 12px;
             padding: 16px 20px;
-            min-width: 280px;
-            box-shadow: 0 8px 32px rgba(255,77,109,0.2);
+            min-width: 260px;
             animation: toastIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
         }
 
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateX(60px) scale(0.9); }
-            to { opacity: 1; transform: translateX(0) scale(1); }
-        }
+        .private-toast { border: 1px solid var(--accent-private); box-shadow: 0 8px 32px rgba(255,77,109,0.2); }
+        .room-toast { border: 1px solid var(--accent-room); box-shadow: 0 8px 32px rgba(124,106,255,0.2); font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--accent-room); }
+
+        @keyframes toastIn { from { opacity: 0; transform: translateX(60px) scale(0.9); } to { opacity: 1; transform: translateX(0) scale(1); } }
 
         .toast-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-
-        .toast-header span {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            color: var(--accent-private);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
+        .toast-header span { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--accent-private); letter-spacing: 2px; text-transform: uppercase; }
         .toast-body { font-size: 0.95rem; font-weight: 600; }
         .toast-sub { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 4px; }
     </style>
 </head>
 <body>
 
-    <!-- LOGIN SCREEN -->
+    <!-- LOGIN -->
     <div id="loginScreen">
         <div class="login-card">
             <div class="logo">🔔</div>
             <h2>Strategy <span>Pattern</span></h2>
             <p>WebSocket + STOMP Demo</p>
-            <input
-                class="login-input"
-                id="loginUsername"
-                type="text"
+            <input class="login-input" id="loginUsername" type="text"
                 placeholder="Ingresa tu nombre de usuario"
-                onkeydown="if(event.key==='Enter') enterApp()"
-                autofocus
-            >
+                onkeydown="if(event.key==='Enter') enterApp()" autofocus>
             <button class="login-btn" onclick="enterApp()">Entrar →</button>
-            <div class="login-hint">
-                Abre esta página en otra pestaña con<br>
-                un usuario diferente para probar mensajes privados
-            </div>
+            <div class="login-hint">Abre en otra pestaña con otro usuario<br>para probar mensajes privados y rooms</div>
         </div>
     </div>
 
-    <!-- MAIN APP -->
+    <!-- APP -->
     <div id="appScreen">
         <div class="container">
+
             <header>
                 <div class="header-left">
                     <h1>Strategy <span>Pattern</span></h1>
-                    <p>Design Pattern Demo — WebSocket + STOMP</p>
+                    <p>Design Pattern Demo — WebSocket + STOMP + H2</p>
                 </div>
                 <div class="header-right">
                     <div class="user-badge">👤 <span id="currentUserLabel"></span></div>
+                    <button class="change-user-btn" onclick="changeUser()">↩ Cambiar usuario</button>
                     <div class="status-badge" id="statusBadge">
                         <div class="status-dot"></div>
                         <span id="statusText">DESCONECTADO</span>
@@ -501,9 +326,9 @@
                 </div>
             </header>
 
-            <!-- Strategy Selector -->
+            <!-- Strategy -->
             <div class="card">
-                <div class="card-label">01 — Selecciona estrategia</div>
+                <div class="card-label">01 — Estrategia</div>
                 <div class="strategy-grid">
                     <button class="strategy-btn active" data-type="broadcast" onclick="selectStrategy('broadcast')">
                         <span class="icon">📡</span>Broadcast
@@ -520,13 +345,15 @@
                 </div>
             </div>
 
-            <!-- Context Fields -->
+            <!-- Context -->
             <div class="card">
                 <div class="card-label">02 — Contexto</div>
                 <div class="context-fields">
                     <div class="field-group">
-                        <label>Room</label>
-                        <input id="room" type="text" placeholder="Ej: general, soporte, ventas" disabled>
+                        <label>Room destino</label>
+                        <select id="room" disabled>
+                            <option value="">— únete a una sala primero —</option>
+                        </select>
                     </div>
                     <div class="field-group">
                         <label>Usuario destino (private)</label>
@@ -535,25 +362,54 @@
                 </div>
             </div>
 
-            <!-- Message Input -->
-            <div class="card message-area">
+            <!-- Message -->
+            <div class="card">
                 <div class="card-label">03 — Mensaje</div>
-                <div class="message-row">
-                    <input id="content" type="text" placeholder="Escribe tu notificación..." onkeydown="if(event.key==='Enter') sendMessage()">
-                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">Enviar →</button>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <input id="content"
+                        style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--text);font-family:'Syne',sans-serif;font-size:0.95rem;outline:none;width:100%;"
+                        placeholder="Escribe tu notificación..."
+                        onkeydown="if(event.key==='Enter') sendMessage()">
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()" style="width:100%;">Enviar →</button>
                 </div>
             </div>
 
-            <!-- Log Panel -->
+            <!-- Rooms -->
+            <div class="card rooms-panel">
+                <div class="card-label">04 — Rooms</div>
+                <div class="rooms-panel-inner">
+                    <div class="rooms-section">
+                        <h3>Salas disponibles</h3>
+                        <div class="room-create-row">
+                            <input class="room-create-input" id="newRoomName" type="text"
+                                placeholder="Nueva sala..."
+                                onkeydown="if(event.key==='Enter') createRoom()">
+                            <button class="room-create-btn" onclick="createRoom()">+ Crear</button>
+                        </div>
+                        <div class="rooms-list" id="allRoomsList">
+                            <div class="empty-rooms">// sin salas aún</div>
+                        </div>
+                    </div>
+                    <div class="rooms-section">
+                        <h3>Mis salas unidas</h3>
+                        <div class="joined-chips" id="joinedChips">
+                            <div class="empty-rooms">// no te has unido a ninguna sala</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Log -->
             <div class="card log-panel">
                 <div class="log-header">
-                    <div class="card-label" style="margin-bottom:0">04 — Log en tiempo real</div>
+                    <div class="card-label" style="margin-bottom:0">05 — Log en tiempo real</div>
                     <button class="clear-btn" onclick="clearLog()">LIMPIAR</button>
                 </div>
                 <ul class="log-list" id="messageList">
                     <div class="empty-state">// esperando mensajes...</div>
                 </ul>
             </div>
+
         </div>
     </div>
 
@@ -561,29 +417,16 @@
         let stompClient = null;
         let currentStrategy = 'broadcast';
         let currentUser = '';
-        let roomSubscriptions = {};
+        let joinedRooms = {};   // { roomName: stomp_subscription }
+        let allRooms = [];
 
         const strategyInfo = {
-            broadcast: {
-                label: 'BroadcastStrategy',
-                color: 'var(--accent-broadcast)',
-                desc: 'Envía a todos los clientes conectados vía <code>/topic/general</code>',
-                fields: []
-            },
-            room: {
-                label: 'RoomStrategy',
-                color: 'var(--accent-room)',
-                desc: 'Envía a todos en una sala específica vía <code>/topic/room/{room}</code>',
-                fields: ['room']
-            },
-            private: {
-                label: 'PrivateStrategy',
-                color: 'var(--accent-private)',
-                desc: 'Envía solo al usuario destino vía <code>/user/{username}/queue/private</code>',
-                fields: ['targetUsername']
-            }
+            broadcast: { label: 'BroadcastStrategy', color: 'var(--accent-broadcast)', desc: 'Envía a todos los clientes conectados vía <code>/topic/general</code>', fields: [] },
+            room:      { label: 'RoomStrategy',      color: 'var(--accent-room)',      desc: 'Envía a todos en una sala específica vía <code>/topic/room/{room}</code>', fields: ['room'] },
+            private:   { label: 'PrivateStrategy',   color: 'var(--accent-private)',   desc: 'Envía solo al usuario destino vía <code>/user/{username}/queue/private</code>', fields: ['targetUsername'] }
         };
 
+        /* ── LOGIN ── */
         function enterApp() {
             const input = document.getElementById('loginUsername');
             const username = input.value.trim();
@@ -595,24 +438,46 @@
             connect();
         }
 
+        function changeUser() {
+            if (stompClient) { stompClient.disconnect(); stompClient = null; }
+            currentUser = '';
+            joinedRooms = {};
+            allRooms = [];
+            currentStrategy = 'broadcast';
+            clearLog();
+            selectStrategy('broadcast');
+            document.getElementById('joinedChips').innerHTML = '<div class="empty-rooms">// no te has unido a ninguna sala</div>';
+            document.getElementById('allRoomsList').innerHTML = '<div class="empty-rooms">// sin salas aún</div>';
+            document.getElementById('room').innerHTML = '<option value="">— únete a una sala primero —</option>';
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('appScreen').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'flex';
+        }
+
+        /* ── WEBSOCKET ── */
         function connect() {
             const socket = new WebSocket('ws://localhost:8080/ws');
             stompClient = Stomp.over(socket);
             stompClient.debug = null;
 
-            // Pass username as STOMP header so Spring identifies this user
-            stompClient.connect({ username: currentUser }, function () {
+            stompClient.connect({ username: currentUser }, async function () {
                 updateStatus(true);
 
+                // Broadcast global
                 stompClient.subscribe('/topic/general', function (msg) {
                     addLog('broadcast', msg.body, null);
                 });
 
-                // Subscribe to own private queue
+                // Cola privada del usuario
                 stompClient.subscribe(`/user/${currentUser}/queue/private`, function (msg) {
                     addLog('private', msg.body, null);
                     showPrivateToast(msg.body);
                 });
+
+                // Cargar rooms y restaurar suscripciones del usuario
+                await loadRooms();
+                await restoreUserRooms();
+                await loadHistory();
 
             }, function () {
                 updateStatus(false);
@@ -620,69 +485,223 @@
             });
         }
 
+        /* ── ROOMS ── */
+        async function loadRooms() {
+            try {
+                const res = await fetch('/api/rooms');
+                allRooms = await res.json();
+                renderAllRooms();
+            } catch(e) { console.warn('Error cargando rooms:', e); }
+        }
+
+        // Al hacer login, recupera las rooms del usuario desde H2 y se suscribe
+        async function restoreUserRooms() {
+            try {
+                const res = await fetch(`/api/user-rooms/${currentUser}`);
+                const userRooms = await res.json();
+                for (const ur of userRooms) {
+                    subscribeToRoom(ur.roomName, false); // false = no guardar de nuevo en BD
+                }
+                renderAllRooms();
+                renderJoinedChips();
+                updateRoomSelect();
+            } catch(e) { console.warn('Error restaurando rooms:', e); }
+        }
+
+        function subscribeToRoom(roomName, saveToDb = true) {
+            if (joinedRooms[roomName]) return;
+            const sub = stompClient.subscribe(`/topic/room/${roomName}`, function (msg) {
+                addLog('room', msg.body, roomName);
+            });
+            joinedRooms[roomName] = sub;
+            if (saveToDb) {
+                fetch('/api/user-rooms', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: currentUser, roomName })
+                });
+            }
+        }
+
+        function joinRoom(roomName) {
+            subscribeToRoom(roomName, true);
+            renderAllRooms();
+            renderJoinedChips();
+            updateRoomSelect();
+            showRoomToast(`✓ Te uniste a #${roomName}`);
+        }
+
+        function leaveRoom(roomName) {
+            if (joinedRooms[roomName]) {
+                joinedRooms[roomName].unsubscribe();
+                delete joinedRooms[roomName];
+            }
+            fetch('/api/user-rooms', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: currentUser, roomName })
+            });
+            renderAllRooms();
+            renderJoinedChips();
+            updateRoomSelect();
+            showRoomToast(`✗ Saliste de #${roomName}`);
+        }
+
+        async function createRoom() {
+            const input = document.getElementById('newRoomName');
+            const name = input.value.trim().toLowerCase().replace(/\s+/g, '-');
+            if (!name) { input.focus(); return; }
+            try {
+                const res = await fetch('/api/rooms', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, createdBy: currentUser })
+                });
+                const room = await res.json();
+                if (!allRooms.find(r => r.name === room.name)) allRooms.push(room);
+                input.value = '';
+                renderAllRooms();
+                joinRoom(room.name);
+            } catch(e) { console.warn('Error creando room:', e); }
+        }
+
+        function renderAllRooms() {
+            const list = document.getElementById('allRoomsList');
+            if (allRooms.length === 0) { list.innerHTML = '<div class="empty-rooms">// sin salas aún</div>'; return; }
+            list.innerHTML = '';
+            allRooms.forEach(room => {
+                const isJoined = !!joinedRooms[room.name];
+                const div = document.createElement('div');
+                div.className = `room-item ${isJoined ? 'joined' : ''}`;
+                div.innerHTML = `
+                    <div class="room-item-left">
+                        <div class="room-dot"></div>
+                        <div>
+                            <div class="room-name"># ${room.name}</div>
+                            <div class="room-creator">por ${room.createdBy}</div>
+                        </div>
+                    </div>
+                    <button class="room-join-btn ${isJoined ? 'leave' : ''}"
+                        onclick="${isJoined ? `leaveRoom('${room.name}')` : `joinRoom('${room.name}')`}">
+                        ${isJoined ? 'Salir' : 'Unirse'}
+                    </button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function renderJoinedChips() {
+            const container = document.getElementById('joinedChips');
+            const names = Object.keys(joinedRooms);
+            if (names.length === 0) { container.innerHTML = '<div class="empty-rooms">// no te has unido a ninguna sala</div>'; return; }
+            container.innerHTML = '';
+            names.forEach(name => {
+                const chip = document.createElement('div');
+                chip.className = 'joined-chip';
+                chip.innerHTML = `# ${name} <span class="chip-remove" onclick="leaveRoom('${name}')">✕</span>`;
+                container.appendChild(chip);
+            });
+        }
+
+        function updateRoomSelect() {
+            const select = document.getElementById('room');
+            const current = select.value;
+            select.innerHTML = '<option value="">— selecciona una sala —</option>';
+            Object.keys(joinedRooms).forEach(name => {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = `# ${name}`;
+                if (name === current) opt.selected = true;
+                select.appendChild(opt);
+            });
+        }
+
+        /* ── STRATEGY ── */
         function selectStrategy(type) {
             currentStrategy = type;
             document.querySelectorAll('.strategy-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector(`[data-type="${type}"]`).classList.add('active');
-
+            const btn = document.querySelector(`[data-type="${type}"]`);
+            if (btn) btn.classList.add('active');
             const info = strategyInfo[type];
             document.getElementById('strategyInfo').innerHTML =
                 `<strong style="color:${info.color}">${info.label}</strong> — ${info.desc}`;
-
             document.getElementById('room').disabled = !info.fields.includes('room');
             document.getElementById('targetUsername').disabled = !info.fields.includes('targetUsername');
-
-            const btn = document.getElementById('sendBtn');
-            btn.className = `send-btn ${type === 'broadcast' ? '' : type}`;
+            document.getElementById('sendBtn').className = `send-btn ${type === 'broadcast' ? '' : type}`;
         }
 
+        /* ── SEND ── */
         function sendMessage() {
             if (!stompClient) { alert("WebSocket no conectado"); return; }
             const content = document.getElementById('content').value;
             const room = document.getElementById('room').value;
             const targetUsername = document.getElementById('targetUsername').value;
             if (!content.trim()) { alert("Escribe un mensaje"); return; }
-
-            // Subscribe to room dynamically if not already subscribed
-            if (currentStrategy === 'room' && room && !roomSubscriptions[room]) {
-                roomSubscriptions[room] = stompClient.subscribe(`/topic/room/${room}`, function (msg) {
-                    addLog('room', msg.body, room);
-                });
-            }
+            if (currentStrategy === 'room' && !room) { alert("Selecciona una sala primero"); return; }
+            if (currentStrategy === 'private' && !targetUsername.trim()) { alert("Escribe el usuario destino"); return; }
 
             stompClient.send("/app/notify", {}, JSON.stringify({
                 type: currentStrategy,
                 content,
                 room,
-                username: targetUsername
+                username: targetUsername,
+                sender: currentUser
             }));
             document.getElementById('content').value = '';
         }
 
-        function showPrivateToast(body) {
-            const toast = document.createElement('div');
-            toast.className = 'private-toast';
-            toast.innerHTML = `
-                <div class="toast-header"><span>🔒 Mensaje privado</span></div>
-                <div class="toast-body">${body}</div>
-                <div class="toast-sub">Solo tú puedes ver esto — usuario: <strong>${currentUser}</strong></div>
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 4500);
+        /* ── HISTORY ── */
+        async function loadHistory() {
+            try {
+                const res = await fetch(`/api/history?username=${currentUser}`);
+                const logs = await res.json();
+                if (logs.length === 0) return;
+
+                const list = document.getElementById('messageList');
+                const empty = list.querySelector('.empty-state');
+                if (empty) empty.remove();
+
+                const divider = document.createElement('div');
+                divider.className = 'history-divider';
+                divider.textContent = '— historial anterior —';
+                list.appendChild(divider);
+
+                logs.forEach(log => {
+                    const time = new Date(log.timestamp).toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                    const tags = { broadcast: 'BROADCAST', room: 'ROOM', private: 'PRIVATE' };
+                    let meta = '';
+                    if (log.type === 'room' && log.room) meta = `<div class="log-meta">→ sala: <strong>#${log.room}</strong> · de: <strong>${log.sender || '?'}</strong></div>`;
+                    else if (log.type === 'private') meta = `<div class="log-meta">→ 🔒 de: <strong>${log.sender}</strong> para: <strong>${log.username}</strong></div>`;
+                    else if (log.sender) meta = `<div class="log-meta">enviado por: <strong>${log.sender}</strong></div>`;
+
+                    const li = document.createElement('li');
+                    li.className = `log-item ${log.type} history`;
+                    li.innerHTML = `
+                        <span class="log-tag">${tags[log.type] || log.type}</span>
+                        <div class="log-content">${log.content}${meta}</div>
+                        <span class="log-time">${time}</span>
+                    `;
+                    list.appendChild(li);
+                });
+
+                const nowDivider = document.createElement('div');
+                nowDivider.className = 'history-divider';
+                nowDivider.textContent = '— en vivo —';
+                list.appendChild(nowDivider);
+                list.scrollTop = list.scrollHeight;
+            } catch(e) { console.warn('No se pudo cargar historial:', e); }
         }
 
+        /* ── LOG ── */
         function addLog(type, body, room) {
             const list = document.getElementById('messageList');
             const empty = list.querySelector('.empty-state');
             if (empty) empty.remove();
-
             const now = new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             const tags = { broadcast: 'BROADCAST', room: 'ROOM', private: 'PRIVATE' };
-
             let meta = '';
-            if (type === 'room' && room) meta = `<div class="log-meta">→ sala: <strong>${room}</strong></div>`;
+            if (type === 'room' && room) meta = `<div class="log-meta">→ sala: <strong>#${room}</strong></div>`;
             if (type === 'private') meta = `<div class="log-meta">→ 🔒 solo para: <strong>${currentUser}</strong></div>`;
-
             const li = document.createElement('li');
             li.className = `log-item ${type}`;
             li.innerHTML = `
@@ -695,10 +714,33 @@
         }
 
         function clearLog() {
-            document.getElementById('messageList').innerHTML =
-                '<div class="empty-state">// esperando mensajes...</div>';
+            document.getElementById('messageList').innerHTML = '<div class="empty-state">// esperando mensajes...</div>';
         }
 
+        /* ── TOASTS ── */
+        function showPrivateToast(body) {
+            const toast = document.createElement('div');
+            toast.className = 'private-toast';
+            toast.innerHTML = `
+                <div class="toast-header"><span>🔒 Mensaje privado</span></div>
+                <div class="toast-body">${body}</div>
+                <div class="toast-sub">Solo tú puedes ver esto — <strong>${currentUser}</strong></div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4500);
+        }
+
+        function showRoomToast(text) {
+            const existing = document.querySelector('.room-toast');
+            if (existing) existing.remove();
+            const toast = document.createElement('div');
+            toast.className = 'room-toast';
+            toast.textContent = text;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+
+        /* ── STATUS ── */
         function updateStatus(connected) {
             const badge = document.getElementById('statusBadge');
             document.getElementById('statusText').textContent = connected ? 'CONECTADO' : 'DESCONECTADO';
